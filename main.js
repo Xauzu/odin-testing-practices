@@ -39,4 +39,20 @@ function caesarCipher(string, shift) {
     return result;
 }
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(arr) {
+    if (arr.length === 0) return { average: null, min: null, max: null, length: 0 }
+
+    const result = { average: arr[0], min: arr[0], max: arr[0], length: arr.length };
+
+    for (let i = 1; i < arr.length; i++) {
+        result.average += arr[i];
+        if (arr[i] < result.min) result.min = arr[i];
+        if (arr[i] > result.max) result.max = arr[i];
+    }
+
+    result.average /= arr.length;
+
+    return result;
+}
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
