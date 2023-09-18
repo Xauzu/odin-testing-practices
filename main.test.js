@@ -11,10 +11,12 @@ test('reverseString', () => {
 });
 
 test('calculator', () => {
-    expect(calculator.add(4, 2)).toBe(6);
-    expect(calculator.subtract(4, 2)).toBe(2);
-    expect(calculator.multiply(4, 2)).toBe(8);
-    expect(calculator.divide(4, 2)).toBe(2);
+    const calc = new calculator();
+    expect(calc.add(4, 2)).toBe(6);
+    expect(calc.subtract(4, 2)).toBe(2);
+    expect(calc.multiply(4, 2)).toBe(8);
+    expect(calc.divide(4, 2)).toBe(2);
+    expect(calc.divide(4, 0)).toThrow();
 });
 
 test('caesarCipher', () => {
