@@ -16,7 +16,9 @@ test('calculator', () => {
     expect(calc.subtract(4, 2)).toBe(2);
     expect(calc.multiply(4, 2)).toBe(8);
     expect(calc.divide(4, 2)).toBe(2);
-    expect(calc.divide(4, 0)).toThrow();
+    expect(() => {
+        calc.divide(4, 0)
+    }).toThrow();
 });
 
 test('caesarCipher', () => {
